@@ -10,6 +10,7 @@ function _response(res,code,data){
     res.end();
 };
 http.createServer( function (request, response) {
+    console.log('New request information.'+request.rawHeaders);
     let urlDet = url.parse(request.url);
     let reqUrl = urlDet.pathname.toString().slice(1);
     let query = urlDet.query;
@@ -28,18 +29,15 @@ http.createServer( function (request, response) {
                 });
         }else if(reqObj.qIndex.indexOf(query) !== -1){
             let proxUrl = reqObj.query[reqObj.qIndex.indexOf(query)].url;
-            https.get(proxUrl, (resp) => {
-                let data = '';
-                resp.on('data', (chunk) => {
-                    data += chunk;
+            axios
+                .get(proxUrl)
+                .then(res => {
+                    _response(response,200,res.data);
+                })
+                .catch(err => {
+                    console.log("Error when get response: " + err);
+                    _response(response,502,'Sever error');
                 });
-                resp.on('end', () => {
-                    _response(response,200,data);
-                });
-            }).on("error", (err) => {
-                console.log("Error when get response: " + err.message);
-                _response(response,502,'Sever error');
-            });
             }else{
                 _response(response,404,'404 not found');
             }
