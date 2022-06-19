@@ -7,12 +7,12 @@ const url = require('url')
 const proxlist = require('./proxlist')
 console.log('System start.')
 function _response(res,code,data){
-    res.writeHead(code, {'Content-Type': 'text/plain; charset=utf-8'});
-    res.write(data);
+    res.status(code)
+    res.send(data);
     res.end();
 };
 module.exports = ( function (request, response) {
-        console.log('New request.');
+        console.log(request);
         let reqUrl = request.query.toString();
         let query;
         if(reqUrl.includes('&')){
