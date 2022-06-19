@@ -32,7 +32,7 @@ module.exports ={
         {
             name: "null",
             url: 'https://hi.nullnode.workers.dev/nullnode-clash',
-            qIndex: ['clash'],
+            qIndex: ['clash','provider'],
             query: [
                 {name: 'clash',url: 'https://hi.nullnode.workers.dev/nullnode-clash'},
                 {name: 'provider',url: 'https://hi.nullnode.workers.dev/nullnode-clashnode'}
