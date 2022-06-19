@@ -12,7 +12,7 @@ function _response(res,code,data){
     res.end();
 };
 module.exports = ( function (request, response) {
-        let r = request.query
+        let r = request.query.name
         console.log(r)
         let reqUrl = r.toString();
         let query;
