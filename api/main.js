@@ -13,9 +13,14 @@ function _response(res,code,data){
 };
 module.exports = ( function (request, response) {
         console.log('New request.');
-        let urlDet = url.parse(request.url);
-        let reqUrl = urlDet.pathname.toString().slice(1);
-        let query = urlDet.query;
+        let reqUrl = request.query;
+        let query;
+        if(request.query.includes('&')){
+            query = request.query.split('&')[1]
+        }else{
+            query  = '';
+        }
+        console.log(reqUrl+query)
         if(proxlist.index.indexOf(reqUrl) !== -1){
             let reqObj = proxlist.list[proxlist.index.indexOf(reqUrl)];
             if(query == "" || query == null){
