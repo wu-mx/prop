@@ -21,7 +21,11 @@ module.exports = ( function (request, response) {
                 axios
                     .get(proxUrl)
                     .then(res => {
-                        _response(response,200,res.data);
+                        if(res.data.includes('https://hi.nullnode.workers.dev/nullnode-clashnode')){
+                            _response(response,200,res.data.replace('https://hi.nullnode.workers.dev/nullnode-clashnode','https://www.prop.cf/?name=null&client=provider'));
+                        }else{
+                            _response(response,200,res.data)
+                        }
                     })
                     .catch(err => {
                         console.log("Error when get response: " + err);
