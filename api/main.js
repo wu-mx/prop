@@ -13,10 +13,10 @@ function _response(res,code,data){
 };
 module.exports = ( function (request, response) {
         console.log('New request.');
-        let reqUrl = request.query;
+        let reqUrl = request.query.toString();
         let query;
-        if(request.query.includes('&')){
-            query = request.query.split('&')[1]
+        if(reqUrl.includes('&')){
+            query = reqUrl.split('&')[1]
         }else{
             query  = '';
         }
