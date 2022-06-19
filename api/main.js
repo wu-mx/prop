@@ -12,8 +12,9 @@ function _response(res,code,data){
     res.end();
 };
 module.exports = ( function (request, response) {
-        console.log(request);
-        let reqUrl = request.query.toString();
+        console.log(JSON.stringify(request));
+        let r = request.query
+        let reqUrl = r.toString();
         let query;
         if(reqUrl.includes('&')){
             query = reqUrl.split('&')[1]
