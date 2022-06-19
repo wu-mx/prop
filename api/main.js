@@ -11,7 +11,7 @@ function _response(res,code,data){
     res.write(data);
     res.end();
 };
-moudle.exports = ( function (request, response) {
+module.exports = ( function (request, response) {
         console.log('New request.');
         let urlDet = url.parse(request.url);
         let reqUrl = urlDet.pathname.toString().slice(1);
