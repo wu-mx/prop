@@ -1,5 +1,5 @@
 module.exports ={
-    index: ["openit","gf","freefq"],
+    index: ["openit","gf","freefq","null"],
     list: [
         {
             name: "openit",
@@ -27,6 +27,14 @@ module.exports ={
             query: [
                 {name: 'clash',url: 'https://api.v1.mk/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FMeilieage%2Fwebcdn%2Fmain%2Frule%2FArea_Media_NoAuto.ini&emoji=true&list=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&sort=false&new_name=true'},
                 {name: 'v2',url: 'https://raw.githubusercontent.com/freefq/free/master/v2'}
+            ]
+        },
+        {
+            name: "null",
+            url: 'https://hi.nullnode.workers.dev/nullnode-clash',
+            qIndex: ['clash'],
+            query: [
+                {name: 'clash',url: 'https://hi.nullnode.workers.dev/nullnode-clash'}
             ]
         }
     ]

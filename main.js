@@ -10,7 +10,7 @@ function _response(res,code,data){
     res.end();
 };
 http.createServer( function (request, response) {
-    console.log('New request information.'+request.rawHeaders);
+    console.log('New request.');
     let urlDet = url.parse(request.url);
     let reqUrl = urlDet.pathname.toString().slice(1);
     let query = urlDet.query;
