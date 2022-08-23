@@ -4,7 +4,7 @@ function _response(res,code,data){
     res.status(code)
     res.send(data);
     res.end();
-};
+}
 module.exports = ( function (request, response) {
         let reqUrl = request.query.url;
         axios.get({
