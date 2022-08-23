@@ -5,7 +5,7 @@ function _response(res,code,data){
     res.send(data);
     res.end();
 }
-module.exports = ( function (request, response) {
+module.exports = function handler(request, response) {
         let reqUrl = request.query.url;
         axios.get({
             method: 'get',
@@ -19,4 +19,4 @@ module.exports = ( function (request, response) {
         ).catch(function (err) {
             _response(response,500,err);
         })
-    });
+    }
