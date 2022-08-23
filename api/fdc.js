@@ -5,9 +5,9 @@ function _response(res,code,data){
     res.send(data);
     res.end();
 }
-module.exports = function handler(request, response) {
+module.exports = ( function (request, response) {
         let reqUrl = request.query.url;
-        axios.get({
+        axios({
             method: 'get',
             url: reqUrl,
             headers: {
@@ -19,4 +19,4 @@ module.exports = function handler(request, response) {
         ).catch(function (err) {
             _response(response,500,err);
         })
-    }
+    });
