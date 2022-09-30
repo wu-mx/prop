@@ -1,5 +1,5 @@
 module.exports ={
-    index: ["openit","gf","freefq","null"],
+    index: ["openit","gf","freefq","null","paimon"],
     list: [
         {
             name: "openit",
