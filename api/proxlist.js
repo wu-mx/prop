@@ -37,6 +37,15 @@ module.exports ={
                 {name: 'clash',url: 'https://hi.nullnode.workers.dev/nullnode-clash'},
                 {name: 'provider',url: 'https://hi.nullnode.workers.dev/nullnode-clashnode'}
             ]
+        },
+        {
+            name: "paimon",
+            url: 'https://github.com/paimonhub/Paimonnode/raw/main/clash.yaml',
+            qIndex: ['clash','base64'],
+            query: [
+                {name: 'clash',url: 'https://github.com/paimonhub/Paimonnode/raw/main/clash.yaml'},
+                {name: 'base64',url: 'https://github.com/paimonhub/Paimonnode/raw/main/base64'}
+            ]
         }
     ]
 }
