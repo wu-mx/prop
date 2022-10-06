@@ -40,10 +40,10 @@ module.exports ={
         },
         {
             name: "paimon",
-            url: 'https://github.com/paimonhub/Paimonnode/raw/main/clash.yaml',
+            url: 'https://github.com/paimonhub/Paimonnode/raw/main/publish/clash.yaml',
             qIndex: ['clash','base64'],
             query: [
-                {name: 'clash',url: 'https://github.com/paimonhub/Paimonnode/raw/main/clash.yaml'},
+                {name: 'clash',url: 'https://github.com/paimonhub/Paimonnode/raw/main/publish/clash.yaml'},
                 {name: 'base64',url: 'https://github.com/paimonhub/Paimonnode/raw/main/base64'}
             ]
         }
